@@ -7,14 +7,20 @@ The original concept was limited to women, but **Fit Connect** is an application
 ### Project UI
 Users will be able to create a personal account, set up their profile to include basic info (age, sex, location) and fitness details: their current fitness level, their preferred gym or workout locations, classes or fitness programs they enjoy or would like to participate in, along with days/times for workout scheduling.
 
-Users will then be able to browse the database and connect with others with similar profiles. They can save profiles for later and also send messages/emails to potential workout buddies.
+Users will then be able to browse the database and connect with others with similar profiles. They can save profiles for later and also possibly send messages/emails to potential workout buddies.
 
 **Views**
-- [ ] / - will feature basic app details and links to sign up or login
+- [ ] /_root_ - will feature basic app details and links to sign up or login
 - [ ] /users/id
 - [ ] /account/id/dashboard
 - [ ] /search
 - [ ] /save - for saving connections
+
+### Features
+- [ ] express
+- [ ] mongodb
+- [ ] mongoose
+- [ ] undecided on authentication method
 
 
 ### Technical Requirements
