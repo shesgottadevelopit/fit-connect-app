@@ -1,0 +1,20 @@
+{% extends "main.nunjucks" %}
+{% set title = "Login Page" %}
+
+{% block content %}
+<div class="login-content">
+    <form class="" action="login/" method="post">
+        <div>
+            <label for="username">Username</label>
+            <input type="text" name="username" value="" placeholder="Username" required>
+        </div>
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" name="password" value="" placeholder="Password" required>
+        </div>
+        <input type="submit" name="" value="Login!">
+    </form>
+
+</div>
+
+{% endblock %}

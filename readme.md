@@ -9,29 +9,37 @@ Users will be able to create a personal account, set up their profile to include
 
 Users will then be able to browse the database and connect with others with similar profiles. They can save profiles for later and also possibly send messages/emails to potential workout buddies.
 
+Users will also be able to create workout events and have other members join them.
+
 **Views**
-- [ ] /_root_ - will feature basic app details and links to sign up or login
-- [ ] /users/id
-- [ ] /account/id/dashboard
-- [ ] /search
-- [ ] /save - for saving connections
+Can also replace `{id}` with `{username}`
+
+[PLACEHOLDER FOR WHEN I FINALIZE MY ISH IN `roadmap.md`]
+
+
 
 ### Features
 - [ ] express
 - [ ] mongodb
 - [ ] mongoose
 - [ ] undecided on authentication method
+    - [ ] Possibly use FB/Twitter/Google or whatever for login/account creation
+- [ ] nunjucks or handlebars
 
 
 ### Technical Requirements
 
-- [ ] User account creation & authentication
-- [ ] A profile/dashboard
+This application utilizes CRUD for creating users and updating their pages
+
+- [ ] New User Account Creation Page - authentication
+- [ ] Returning User Login Page - authentication
+- [ ] User Account Profile/dashboard
 - [ ] CRUD abilities for querying other users with similar profiles
-    - [ ] create users & update their pages
     - [ ] add, update, and delete fitness connections linked to each user's profile
 
-**Additional Features:**
-- [ ] There is the potential for API integration, will explore at a later time
-    - [ ] Possibly use FB/Twitter/Google or whatever for login/account creation
-- [ ] Users will also be able to create workout events and have other members join them.
+
+Potential APIs for integration (and other features):
+- [ ] [FitBit](https://dev.fitbit.com/docs/devices/) // for activity importing
+- [ ] [Socket for Chat](https://socket.io)
+- [ ] [UnderArmour](https://developer.underarmour.com/docs/)
+- [ ] [MyFitnessPal](http://www.myfitnesspal.com/api)

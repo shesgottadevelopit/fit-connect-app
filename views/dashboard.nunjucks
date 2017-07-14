@@ -1,0 +1,10 @@
+{% extends "main.nunjucks" %}
+{% set title = 'Your Dashboard' %}
+
+{% block content %}
+
+<h3>{{account.username}}</h3>
+<div class="">
+    {{account}}
+</div>
+{% endblock %}
