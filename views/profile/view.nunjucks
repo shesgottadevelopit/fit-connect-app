@@ -1,8 +1,6 @@
 {% extends "main.nunjucks" %}
 {% set title = "Your Profile Page" %}
 
-{% include "dashboard-menu.nunjucks" %}
-
 {% block content %}
 {{account.username}}
 {% endblock %}

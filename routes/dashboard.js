@@ -17,8 +17,20 @@ dashboardRouter.get('/:username', function (req, res) {
 
 dashboardRouter.get('/profile/:username', function (req, res) {
     Account.findOne({'username': req.params.username}, function (err, account) {
-        res.render('profile', { account })
+        res.render('profile/view', { account })
     })
 })
+
+dashboardRouter.get('/profile/edit/:username', function( req, res ){
+    Account.findOne({'username': req.params.username}, function (err, account) {
+        res.render('profile/edit', { account })
+    })
+})
+dashboardRouter.get('/profile/save')
+
+dashboardRouter.get('/connections')
+dashboardRouter.get('/connections/view')
+dashboardRouter.get('/connections/add')
+dashboardRouter.get('/connections/delete')
 
 module.exports = dashboardRouter

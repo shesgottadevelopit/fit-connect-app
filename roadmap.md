@@ -44,14 +44,15 @@ Can also replace `{id}` with `{username}`
         - [ ] /profile
             - [ ] /profile/edit
             - [ ] /profile/save
-        - [ ] /connection
-            - [ ] /view
-            - [ ] /add
-            - [ ] /delete
+        - [ ] /connections
+            - [ ] /view/:username
+            - [ ] /add/:username
+            - [ ] /delete/:username
 - [ ] /users
     - [ ] /profile
         - [ ] {id}
 - [ ] /search
+    - [ ] /results
     - [ ] /add - for adding connetions
     - [ ] /save - for saving connections
     - [ ] /delete - for deleting connections

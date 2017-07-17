@@ -1,0 +1,71 @@
+{% extends "main.nunjucks" %}
+{% set title = "Edit Your Profile" %}
+
+{% block content %}
+
+<form class="profile-edit-form" action="/profile/save/{{account.username}}" method="post">
+
+    <div class="profile-form-group">
+        <label for="profileimage">Profile Image</label>
+        <input type="text" name="profileimage" value="">
+
+    </div>
+    
+    <div class="profile-form-group">
+        <label for="username">Username</label>
+        <input type="text" name="username" value="{{account.username}}" disabled>
+    </div>
+
+    <div class="profile-form-group">
+        <label for="email">Email</label>
+        <input type="email" name="email" value="" placeholder="Email Address">
+    </div>
+
+    <div class="profile-form-group">
+        <label for="firstname">First Name</label>
+        <input type="text" name="firstname" value="{{account.firstname}}" placeholder="First Name">
+    </div>
+
+    <div class="profile-form-group">
+        <label for="lastname">Last Name</label>
+        <input type="text" name="lastname" value="" placeholder="Last Name">
+    </div>
+
+    <div class="profile-form-group">
+        <label for="age">Age</label>
+        <input type="number" name="age" value="" placeholder="Age">
+    </div>
+
+    <div class="profile-form-group">
+        <label for="location">Location</label>
+        <input type="text" name="city" value="" placeholder="City">
+        <input type="text" name="state" value="" placeholder="State">
+
+    </div>
+
+    <div class="profile-form-group">
+        <label for="workoutpreferences">Workout Preferences</label>
+        <input type="text" name="fitnesspreferences" value="">
+    </div>
+
+    <div class="profile-form-group">
+        <label for="">Gyms</label>
+        <input type="text" name="" value="">
+    </div>
+
+    <div class="profile-form-group">
+        <label for="">Favorite Fitness Activities</label>
+        <input type="text" name="" value="">
+    </div>
+
+    <div class="profile-form-group">
+        <input type="submit" name="editprofilebutton" value="Update Profile">
+    </div>
+
+    {# <div class="profile-form-group">
+        <label for=""></label>
+        <input type="text" name="" value="">
+    </div> #}
+</form>
+
+{% endblock %}

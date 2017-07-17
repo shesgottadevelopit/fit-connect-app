@@ -1,5 +1,6 @@
 // main: style.scss
 // theme color palette
+
 //$main-color: ;
 //$accent-color: ;
 //$neutral-color: ;
@@ -8,6 +9,17 @@
 // selected colors
 $white: #ffffff;
 $black: #000000;
+$coral: #f31536;
+$blue: #014282;
+$yellow: #fcb913;
+$lightblue: #ace1f9;
+$midblue: #00bfad;
+$darkblue: #1f4373;
+$red: #d52b1d;
+$offblack: #09091a;
+$lightgrey: #e8e9ea;
+$lightgrey2: #c0c0c8;
+$darkgrey: #595a5c;
 
 // fonts
 
@@ -16,6 +28,10 @@ $sans: sans-serif;
 $serif: serif;
 $monospace1: "Courier 10 Pitch", Courier, monospace;
 $monospace2: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+
+$body-font: "Assistant", Tahoma, sans-serif;
+$header-font: "Hind", Arial, sans-serif;
+$primary-font: "Hind", Arial, sans-serif;
 
 // media query dimensions
 

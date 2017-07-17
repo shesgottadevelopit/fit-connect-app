@@ -10,7 +10,7 @@
 {% include "header.nunjucks" %}
 
 {# main content  #}
-<main>
+<main class="main-content">
     {% block content %}
     {% endblock %}
 </main>

@@ -1,9 +1,10 @@
 // main: style.scss
 // clearfix for floats
 @mixin clearfix {
+    // Usage .floated-item-parent { @include clearfix; }
   &:after {
     display: table;
     clear: both;
     content: '';
   }
-} // Usage .floated-item-parent { @include clearfix; }
+}

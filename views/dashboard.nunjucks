@@ -1,5 +1,5 @@
 {% extends "main.nunjucks" %}
-{% set title = 'Your Dashboard' %}
+{% set title = "Your Dashboard" %}
 
 {% block content %}
 
@@ -8,6 +8,26 @@
     {{account}}
 </div>
 <div class="">
-    
+    <article class="">
+        Text Text Text
+    </article>
+    <section>
+        <a href="/dashboard/profile/{{account.username}}">View Your Public Profile</a>
+        <a href="/dashboard/profile/edit/{{account.username}}">Edit Your Profile</a>
+    </section>
+
+    <section>
+        <h4>Current Fitness Connections</h4>
+        <div class="">
+            If this person has fitness connections they will be listed here
+        </div>
+    </section>
+
+    <section>
+        <a href="#">Link your other accounts</a>
+        <div class="">This will require API integration
+
+        </div>
+    </section>
 </div>
 {% endblock %}

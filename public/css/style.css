@@ -15,6 +15,7 @@ CSS structure
 /*--------------------------------------------------------------
 # reset/normalize
 --------------------------------------------------------------*/
+@import url("https://fonts.googleapis.com/css?family=Assistant:200,300,400,600,700,800|Hind:300,400,500,600,700");
 html {
 		font-family: sans-serif;
 		-webkit-text-size-adjust: 100%;
@@ -339,7 +340,7 @@ input,
 select,
 textarea {
 		color: #404040;
-		font-family: sans-serif;
+		font-family: "Assistant", Tahoma, sans-serif;
 		font-size: 1rem;
 		line-height: 1.5;
 }
@@ -351,6 +352,7 @@ h4,
 h5,
 h6 {
 		clear: both;
+		font-family: "Hind", Arial, sans-serif;
 }
 
 p {
@@ -410,6 +412,73 @@ big {
 /*--------------------------------------------------------------
 # sections (content/posts/widgets)
 --------------------------------------------------------------*/
+.app-header {
+		background-color: #595a5c;
+		padding-top: 1.5rem;
+		padding-bottom: 1.5rem;
+}
+
+.app-header:after {
+		display: table;
+		clear: both;
+		content: '';
+}
+
+.app-header ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+}
+
+.app-header li {
+		display: inline-block;
+}
+
+.app-header-logo {
+		width: 100px;
+		height: 100px;
+		border: 2px dotted #f31536;
+}
+
+.main-nav {
+		color: #ffffff;
+}
+
+.main-nav ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+}
+
+.main-nav li {
+		display: inline-block;
+}
+
+.main-nav a {
+		color: #ffffff;
+}
+
+.main-nav a:visited {
+		color: #ffffff;
+}
+
+.main-nav a:hover, .main-nav a:focus, .main-nav a:active {
+		color: #f31536;
+}
+
+.main-nav a:focus {
+		outline: thin dotted;
+}
+
+.main-nav a:hover, .main-nav a:active {
+		outline: 0;
+}
+
+.app-footer {
+		background-color: #595a5c;
+		color: #ffffff;
+}
+
 /*--------------------------------------------------------------
 # forms
 --------------------------------------------------------------*/
@@ -516,110 +585,6 @@ a:focus {
 
 a:hover, a:active {
 		outline: 0;
-}
-
-.main-nav {
-		clear: both;
-		display: block;
-		float: left;
-		width: 100%;
-}
-
-.main-nav a {
-		display: block;
-		text-decoration: none;
-}
-
-.main-nav ul {
-		display: none;
-		list-style: none;
-		margin: 0;
-		padding-left: 0;
-}
-
-.main-nav ul ul {
-		box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-		float: left;
-		position: absolute;
-		top: 1.5em;
-		left: -999em;
-		z-index: 99999;
-}
-
-.main-nav ul ul ul {
-		left: -999em;
-		top: 0;
-}
-
-.main-nav ul ul li:hover > ul,
-.main-nav ul ul li.focus > ul {
-		left: 100%;
-}
-
-.main-nav ul ul a {
-		width: 200px;
-}
-
-.main-nav ul li:hover > ul,
-.main-nav ul li.focus > ul {
-		left: auto;
-}
-
-.main-nav li {
-		float: left;
-		position: relative;
-}
-
-/* Small menu. */
-.menu-toggle,
-.main-nav.toggled ul {
-		display: block;
-}
-
-@media screen and (min-width: 37.5em) {
-		.menu-toggle {
-				display: none;
-		}
-		.main-nav ul {
-				display: block;
-		}
-}
-
-.site-content .comment-navigation, .site-content
-.posts-navigation, .site-content
-.post-navigation {
-		margin: 0 0 1.5em;
-		overflow: hidden;
-}
-
-.comment-navigation .nav-previous,
-.posts-navigation .nav-previous,
-.post-navigation .nav-previous {
-		float: left;
-		width: 50%;
-}
-
-.comment-navigation .nav-next,
-.posts-navigation .nav-next,
-.post-navigation .nav-next {
-		float: right;
-		text-align: right;
-		width: 50%;
-}
-
-/*--------------------------------------------------------------
-# Infinite scroll
---------------------------------------------------------------*/
-/* Globally hidden elements when Infinite Scroll is supported and in use. */
-.infinite-scroll .posts-navigation,
-.infinite-scroll.neverending .site-footer {
-		/* Theme Footer (when set to scrolling) */
-		display: none;
-}
-
-/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
-.infinity-end.neverending .site-footer {
-		display: block;
 }
 
 /*# sourceMappingURL=style.css.map */
