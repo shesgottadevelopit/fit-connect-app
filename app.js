@@ -6,8 +6,6 @@ const cookieParser = require('cookie-parser');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 
-
-
 // create express app
 const app = express()
 
@@ -20,7 +18,7 @@ nunjucks.configure([
     'views/layouts',
     'views/layouts/partials'], {
     autoescape: true,
-    trimBlocks: true,
+    //trimBlocks: true,
     lstripBlocks: true,
     express: app,
     watch: false,
@@ -59,6 +57,9 @@ passport.deserializeUser(Account.deserializeUser())
 // app routes
 const indexRouter = require('./routes/index');
 app.use('/', indexRouter)
+
+const dashboardRouter = require('./routes/dashboard')
+app.use('/dashboard', dashboardRouter)
 
 
 

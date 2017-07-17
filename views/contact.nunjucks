@@ -1,8 +1,8 @@
 {% extends "main.nunjucks" %}
-{% set title = 'Home Page' %}
+{% set title = 'Contact Information' %}
 
 {% block content %}
 <div class="">
-    INDEX PAGE 
+    Insert Contact information
 </div>
 {% endblock %}

@@ -11,16 +11,18 @@ Things to do:
 - [x] review authentication, read through documentation and figure that shit out
     - [x] email/username signup
     - [ ] OAuth using FB or twitter or whatever **progressive enhancement**
-- [ ] configure app for authentication
+    - [ ] add validation for emails and usernames through HTML5 and js on the server side
+- [x] configure app for authentication
     - [x] run `npm install -S passport passport-local passport-local-mongoose`
     - [x] require `passport passport-local passport-local-mongoose` within `app.js`
     - [x] create a model for user accounts (example: http://passportjs.org/docs/profile)
-    - [ ] configure passport within `app.js`
+    - [x] configure passport within `app.js`
         - [x] write helper function to check if session still exists
-    - [ ] run tests
+        - [x] implement ways to protect certain conteent based on credentials (`isAuthd` functionality)
 - [ ] ...
 - [ ] ...
 - [ ] ...
+- [ ] configure application queries
 - [ ] ...
 - [ ] create graphics
 - [ ] add styling
@@ -39,9 +41,13 @@ Can also replace `{id}` with `{username}`
     - [ ] /login
 - [ ] /dashboard
     - [ ] /{username}
-    - [ ] /profile
-        - [ ] /profile/edit
-        - [ ] /profile/save
+        - [ ] /profile
+            - [ ] /profile/edit
+            - [ ] /profile/save
+        - [ ] /connection
+            - [ ] /view
+            - [ ] /add
+            - [ ] /delete
 - [ ] /users
     - [ ] /profile
         - [ ] {id}

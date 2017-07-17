@@ -2,9 +2,22 @@ const express = require('express');
 const indexRouter = express.Router()
 const Account = require('../models/Accounts');
 const passport = require('passport');
+const isAuthd = require('../utils/isAuthd');
 
 indexRouter.get('/', function (req, res) {
-    res.render('index')
+    let account = req.user
+    // console.log(account)
+    res.render('index', {account: account})
+})
+
+indexRouter.get('/about', function(req, res) {
+    let account = req.user
+    res.render('about', {account: account})
+})
+
+indexRouter.get('/contact', function(req, res) {
+    let account = req.user
+    res.render('contact', {account: account})
 })
 
 indexRouter.get('/signup', function (req, res) {
@@ -21,7 +34,7 @@ indexRouter.post('/signup', function (req, res) {
         if ( err ) {
             return res.render('signup', { account: account })
         }
-        console.log(req.body)
+        //console.log(req.body) - includes the actual passport
         passport.authenticate('local')(req, res, function () {
             //res.render(`dashboard/${username}`, { account: account })
             res.redirect(`/dashboard/${account.username}`)
@@ -29,21 +42,17 @@ indexRouter.post('/signup', function (req, res) {
     })
 })
 
-function isAuthd (req, res, next) {
-    if (req.isAuthenticated())
-    return next()
-    res.redirect('/')
-}
-
 
 indexRouter.get('/login', function ( req, res) {
     res.render('login')
 })
 
 indexRouter.post('/login', passport.authenticate('local'), function (req, res) {
-    console.log(req.body)
+    let account = req.user
+    // console.log(req.body)
+    // console.log(account)
     // res.redirect(`/dashboard/${account.username}`)
-    res.redirect(`/dashboard/${req.body.username}`)
+    res.redirect(`/dashboard/${account.username}`)
 })
 
 indexRouter.get('/logout', function (req, res) {
@@ -51,16 +60,5 @@ indexRouter.get('/logout', function (req, res) {
     res.redirect('/')
 })
 
-indexRouter.get('/dashboard/:username', isAuthd, function (req, res) {
-    Account.findOne({'username': req.params.username}, function (err, account) {
-        res.render('dashboard', { account })
-    })
-})
-
-indexRouter.get('/profile/:username', isAuthd, function (req, res) {
-    Account.findOne({'username': req.params.username}, function (err, account) {
-        res.render('profile', { account })
-    })
-})
 
 module.exports = indexRouter;

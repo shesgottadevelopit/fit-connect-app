@@ -1,8 +1,8 @@
 {% extends "main.nunjucks" %}
-{% set title = 'Home Page' %}
+{% set title = 'About Fit Connect' %}
 
 {% block content %}
 <div class="">
-    INDEX PAGE 
+    About Me Page
 </div>
 {% endblock %}
