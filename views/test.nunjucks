@@ -1,0 +1,19 @@
+{% extends "main.nunjucks" %}
+{% set title = 'Home Page' %}
+
+{% block content %}
+<div class="">
+    All Accounts
+    <ul>
+        {% for account in accounts %}
+        <div class="">
+                <li><a href="/dashboard/profile/{{account.username}}">{{account.username}}</a></li>
+                <div class="">{{account}}</div>
+                <div class="account-profile">{{account.profile}}</div>
+                <a href="/delete/{{account.username}}">DELETE</a>
+        </div>
+
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

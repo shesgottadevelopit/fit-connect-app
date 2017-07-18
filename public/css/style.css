@@ -6,10 +6,6 @@ CSS structure
 ----------------------------------------------------------------
 #
 #
-#
-#
-#
-#
 
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
@@ -412,6 +408,21 @@ big {
 /*--------------------------------------------------------------
 # sections (content/posts/widgets)
 --------------------------------------------------------------*/
+.page {
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 100%;
+		display: flex;
+		min-height: 100vh;
+		flex-direction: column;
+}
+
+.container {
+		max-width: 85%;
+		margin-left: auto;
+		margin-right: auto;
+}
+
 .app-header {
 		background-color: #595a5c;
 		padding-top: 1.5rem;
@@ -477,6 +488,12 @@ big {
 .app-footer {
 		background-color: #595a5c;
 		color: #ffffff;
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+}
+
+.main-content {
+		flex: 1;
 }
 
 /*--------------------------------------------------------------

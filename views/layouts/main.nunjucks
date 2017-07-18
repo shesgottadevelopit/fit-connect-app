@@ -6,6 +6,8 @@
         <title>{{title}}</title>
     </head>
 <body>
+<div class="page">
+
 {# header partial  #}
 {% include "header.nunjucks" %}
 
@@ -17,5 +19,6 @@
 
 {# footer partial  #}
 {% include "footer.nunjucks" %}
+</div>
 </body>
 </html>

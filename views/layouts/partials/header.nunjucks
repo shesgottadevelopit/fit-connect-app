@@ -1,12 +1,13 @@
 <header class="app-header">
-    <div class="app-header-logo">
-
-    </div>
+    <div class="container">
+    <h1>Fit Connect App</h1>
+    {# <div class="app-header-logo"></div> #}
     <nav class="main-nav">
         <ul>
             <li><a href="/">Home</a></li>
             <li><a href="/about">About</a></li>
             <li><a href="/contact">Contact</a></li>
+            <li><a href="/test">Test; be sure to remove</a></li>
             {%- if account -%}{# should only appear if the user is logged in #}
             {# <li><a href="/dashboard/{{account.username}}">Dashboard</a></li>
             <li><a href="/logout">Logout</a></li> #}
@@ -17,4 +18,5 @@
         </ul>
     </nav>
     {% include "dashboard-menu.nunjucks" %}
+    </div>
 </header>

@@ -3,7 +3,7 @@ Things to do:
 - [x] write out necessary views
     - [x] first iteration
     - [ ] second iteration
-- [ ] draft first models and schemas for user accounts, profiles, whatelse???
+- [x] draft first models and schemas for user accounts, profiles, whatelse???
 - [x] setup server
 - [x] setup database
 - [x] setup templating engine / nunjucks
@@ -35,14 +35,14 @@ Things to do:
 Can also replace `{id}` with `{username}`
 
 - [ ] / **root**
-    - [ ] /about
-    - [ ] /contact
-    - [ ] /signup
-    - [ ] /login
+    - [x] /about
+    - [x] /contact
+    - [x] /signup
+    - [x] /login
 - [ ] /dashboard
-    - [ ] /{username}
-        - [ ] /profile
-            - [ ] /profile/edit
+    - [x] /{username}
+    - [ ] /profile
+            - [x] /profile/edit
             - [ ] /profile/save
         - [ ] /connections
             - [ ] /view/:username
@@ -57,11 +57,21 @@ Can also replace `{id}` with `{username}`
     - [ ] /save - for saving connections
     - [ ] /delete - for deleting connections
 
-
+**Zakk notes**
 - /profile
     - /:id
     - /edit/:id
     - /edit
+
+
+**Query options**
+- age range
+- location (distance range)
+- workout preferences
+- gyms
+- activities
+- fitness goals
+
 
 **Test users:**
 marybeth (booboo)
@@ -72,3 +82,6 @@ shesgottadevelopit+test1@gmail.com
 
 aziza (jones)
 shesgottadevelopit+test1@gmail.com
+
+akudo (test)
+shesgottadevelopit@gmail.com

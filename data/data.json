@@ -1,0 +1,31 @@
+{
+    "dayparts": [
+        {"daypart": "Early Morning"},
+        {"daypart": "Morning"},
+        {"daypart": "Afternoon"},
+        {"daypart": "Late Afternoon"},
+        {"daypart": "Evening"},
+        {"daypart": "Weekend Mornings"},
+        {"daypart": "Weekend Afternoons"},
+        {"daypart": "Weekend Evenings"}
+    ],
+    "activities": [
+        {"name": "Yoga"},
+        {"name": "Pilates"},
+        {"name": "Swimming"},
+        {"name": "Running"},
+        {"name": "Kick Boxing"},
+        {"name": "Outdoor Cycling"},
+        {"name": "Spin"},
+        {"name": "Weight Lifting"},
+        {"name": "CrossFit"}
+    ],
+    "goals": [
+        {"name": "Lose weight"},
+        {"name": "Gain weight"},
+        {"name": "Improve muscle tone"},
+        {"name": "Stay active and get in shape"},
+        {"name": "Just be healthier"},
+        {"name": "Exercise consistently"}
+    ]
+}

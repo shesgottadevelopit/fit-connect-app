@@ -1,15 +1,13 @@
 {% extends "main.nunjucks" %}
-{% set title = 'Sign Up for Fit Connect' %}
+{% set title = 'Sign Up for Fit Connect!' %}
 
 {% block content %}
 <div class="signup-content">
 
     <article class="">
-        [insert copy about signing up for something awesome]
+        <p>[insert copy about signing up for something awesome]</p>
 
     </article>
-
-    {# https://codepen.io/geoffyuen/pen/Gdcjv #}
 
     <form class="" action="signup/" method="post">
         <div>
@@ -24,13 +22,6 @@
             <label for="email">Email Address</label>
             <input type="email" name="email" value="" placeholder="youremail@yourdomain.com" required>
         </div>
-
-        <div>
-            <label for="firstname">First Name</label>
-            <input type="text" name="firstname" value="" placeholder="First Name" required>
-        </div>
-        <label for="lastname">Last Name</label>
-        <input type="text" name="lastname" value="" placeholder="Last Name" required>
 
         <input type="submit" name="submit" value="Sign up!">
 

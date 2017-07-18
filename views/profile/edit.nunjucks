@@ -3,49 +3,71 @@
 
 {% block content %}
 
-<form class="profile-edit-form" action="/profile/save/{{account.username}}" method="post">
+<div class="">
+    <p>All required fields are denoted with an asterick and red</p>
+</div>
+
+<form class="profile-edit-form" action="/dashboard/profile/save/{{account.username}}" method="post">
 
     <div class="profile-form-group">
         <label for="profileimage">Profile Image</label>
         <input type="text" name="profileimage" value="">
 
     </div>
-    
+
     <div class="profile-form-group">
         <label for="username">Username</label>
-        <input type="text" name="username" value="{{account.username}}" disabled>
+        <input type="text" name="username" value="{{account.profile.username}}" readonly="readonly">
     </div>
 
     <div class="profile-form-group">
         <label for="email">Email</label>
-        <input type="email" name="email" value="" placeholder="Email Address">
+        <input type="email" name="email" {% if account.profile.email %}value="{{account.profile.email}}"{% else%}value=""{% endif %} placeholder="Email Address" required>
     </div>
 
     <div class="profile-form-group">
         <label for="firstname">First Name</label>
-        <input type="text" name="firstname" value="{{account.firstname}}" placeholder="First Name">
+        <input type="text" name="firstname" {% if account.profile.firstname %}value="{{account.profile.firstname}}"{% else%}value=""{% endif %} placeholder="First Name">
     </div>
 
     <div class="profile-form-group">
         <label for="lastname">Last Name</label>
-        <input type="text" name="lastname" value="" placeholder="Last Name">
+        <input type="text" name="lastname" {% if account.profile.lastname %}value="{{account.profile.lastname}}"{% else%}value=""{% endif %} placeholder="Last Name">
     </div>
 
     <div class="profile-form-group">
         <label for="age">Age</label>
-        <input type="number" name="age" value="" placeholder="Age">
+        <input type="number" name="age" {% if account.profile.age %}value="{{account.profile.age}}"{% else%}value=""{% endif %} placeholder="18+" min="18" max="100" required>
+    </div>
+
+    <div class="profile-form-group">
+        <label for="age">Gender</label>
+        <select class="" name="gender" size="2">
+            <option value="Female"{% if account.profile.gender === "Female" %} selected {% endif %}>Female</option>
+            <option value="Male" {% if account.profile.gender === "Male" %} selected {% endif %}>Male</option>
+
+        </select>
     </div>
 
     <div class="profile-form-group">
         <label for="location">Location</label>
-        <input type="text" name="city" value="" placeholder="City">
-        <input type="text" name="state" value="" placeholder="State">
+        <input type="text" name="city" {% if account.profile.city %}value="{{account.profile.city}}"{% else%}value=""{% endif %} placeholder="City" required>
+        <input type="text" name="state" {% if account.profile.state %}value="{{account.profile.state}}"{% else%}value=""{% endif %} placeholder="State" required>
 
     </div>
 
     <div class="profile-form-group">
-        <label for="workoutpreferences">Workout Preferences</label>
-        <input type="text" name="fitnesspreferences" value="">
+        <fieldset>
+            <h3>Workout Schedule Preferences</h3>
+            {% for this in datajson.dayparts %}
+            <div>
+                <input type="checkbox" name="workoutschedule" value="{{this.daypart}}" {% for item in account.profile.workoutschedule %}{% if item === this.daypart %} checked {% endif %}{% endfor %}>
+                <label for="workoutpreference">{{this.daypart}}</label>
+            </div>
+            {% endfor %}
+
+        </fieldset>
+
     </div>
 
     <div class="profile-form-group">
@@ -54,18 +76,26 @@
     </div>
 
     <div class="profile-form-group">
-        <label for="">Favorite Fitness Activities</label>
-        <input type="text" name="" value="">
+        <label for="">Preferred Fitness Activities</label>
+        <select class="" name="activities" multiple>
+            {% for this in datajson.activities %}
+                <option name="activity" value="{{this.name}}" {% for item in account.profile.activities %}{% if item === this.name %} selected {% endif %}{% endfor %}>{{this.name}}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <div class="profile-form-group">
+        <label for="">Fitness Goals</label>
+        <select class="" name="goals" multiple>
+            {% for this in datajson.goals %}
+                <option name="goal" value="{{this.name}}" {% for item in account.profile.goals %}{% if item === this.name %} selected {% endif %}{% endfor %}>{{this.name}}</option>
+            {% endfor %}
+        </select>
     </div>
 
     <div class="profile-form-group">
         <input type="submit" name="editprofilebutton" value="Update Profile">
     </div>
-
-    {# <div class="profile-form-group">
-        <label for=""></label>
-        <input type="text" name="" value="">
-    </div> #}
 </form>
 
 {% endblock %}

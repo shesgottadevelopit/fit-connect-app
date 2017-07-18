@@ -1,0 +1,11 @@
+{% extends "main.nunjucks" %}
+{% set title = "Your Profile Page" %}
+
+{% block content %}
+<div class="profile-page">
+    {% for connections in account.profile.fitconnections %}
+        <li>{{connection.username}}</li>
+    {% endfor %}
+    
+</div>
+{% endblock %}

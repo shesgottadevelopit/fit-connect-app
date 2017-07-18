@@ -18,7 +18,6 @@ nunjucks.configure([
     'views/layouts',
     'views/layouts/partials'], {
     autoescape: true,
-    //trimBlocks: true,
     lstripBlocks: true,
     express: app,
     watch: false,
@@ -49,7 +48,7 @@ app.use(require('express-session')({ // why is this happening here
 app.use(passport.initialize()) // explain
 app.use(passport.session())
 
-let Account = require('./models/Accounts')
+let Account = require('./models/Account')
 passport.use(new LocalStrategy(Account.authenticate()))
 passport.serializeUser(Account.serializeUser())
 passport.deserializeUser(Account.deserializeUser())

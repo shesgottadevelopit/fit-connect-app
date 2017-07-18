@@ -2,5 +2,18 @@
 {% set title = "Your Profile Page" %}
 
 {% block content %}
-{{account.username}}
+<div class="profile-page">
+    {{account}}
+
+    <br>
+    <br>
+    {{account.profile}}
+
+    <br>
+    <br>
+    {{account.profile.username}}
+    {{account.profile.age}}
+    {{account.profile.workoutschedule}}
+    {{account.location}}
+</div>
 {% endblock %}
