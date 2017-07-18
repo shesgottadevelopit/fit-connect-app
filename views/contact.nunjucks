@@ -2,7 +2,9 @@
 {% set title = 'Contact Information' %}
 
 {% block content %}
-<div class="">
-    Insert Contact information
+<div class="container">
+    <p>For more information about the app please contact me on twitter at <a href="#">FitAppTwitter</a></p>
+
+    <p>If you'd like to delete your account, you can't.</p>
 </div>
 {% endblock %}

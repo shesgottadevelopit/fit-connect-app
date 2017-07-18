@@ -349,6 +349,8 @@ h5,
 h6 {
 		clear: both;
 		font-family: "Hind", Arial, sans-serif;
+		margin-top: .5rem;
+		margin-bottom: .5rem;
 }
 
 p {
@@ -421,6 +423,8 @@ big {
 		max-width: 85%;
 		margin-left: auto;
 		margin-right: auto;
+		padding-top: 2rem;
+		padding-bottom: 2rem;
 }
 
 .app-header {
@@ -445,6 +449,27 @@ big {
 		display: inline-block;
 }
 
+.app-header h1 a {
+		color: #09091a;
+		text-decoration: none;
+}
+
+.app-header h1 a:visited {
+		color: #09091a;
+}
+
+.app-header h1 a:hover, .app-header h1 a:focus, .app-header h1 a:active {
+		color: #1f4373;
+}
+
+.app-header h1 a:focus {
+		outline: thin dotted;
+}
+
+.app-header h1 a:hover, .app-header h1 a:active {
+		outline: 0;
+}
+
 .app-header-logo {
 		width: 100px;
 		height: 100px;
@@ -453,20 +478,18 @@ big {
 
 .main-nav {
 		color: #ffffff;
-}
-
-.main-nav ul {
-		list-style: none;
-		margin: 0;
-		padding: 0;
+		font-weight: 600;
 }
 
 .main-nav li {
-		display: inline-block;
+		padding-right: .5rem;
 }
 
 .main-nav a {
 		color: #ffffff;
+		text-decoration: none;
+		font-family: "Hind", Arial, sans-serif;
+		text-transform: uppercase;
 }
 
 .main-nav a:visited {
@@ -485,6 +508,38 @@ big {
 		outline: 0;
 }
 
+.dashboard-nav {
+		text-align: right;
+		color: #ffffff;
+		font-weight: 600;
+		color: #ffffff;
+}
+
+.dashboard-nav li {
+		padding-left: .75rem;
+}
+
+.dashboard-nav a {
+		color: #ffffff;
+		text-decoration: none;
+}
+
+.dashboard-nav a:visited {
+		color: #ffffff;
+}
+
+.dashboard-nav a:hover, .dashboard-nav a:focus, .dashboard-nav a:active {
+		color: #fcb913;
+}
+
+.dashboard-nav a:focus {
+		outline: thin dotted;
+}
+
+.dashboard-nav a:hover, .dashboard-nav a:active {
+		outline: 0;
+}
+
 .app-footer {
 		background-color: #595a5c;
 		color: #ffffff;
@@ -496,9 +551,19 @@ big {
 		flex: 1;
 }
 
+.profile-image {
+		width: 200px;
+		height: 200px;
+		border: 1px solid #595a5c;
+}
+
 /*--------------------------------------------------------------
 # forms
 --------------------------------------------------------------*/
+input, select {
+		margin-bottom: 1rem;
+}
+
 button,
 input[type="button"],
 input[type="reset"],
@@ -552,6 +617,7 @@ textarea {
 		border: 1px solid #ccc;
 		border-radius: 3px;
 		padding: 3px;
+		width: 100%;
 }
 
 select {

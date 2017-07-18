@@ -2,45 +2,46 @@
 {% set title = "Search for Fitness Connections" %}
 
 {% block content %}
+<div class="container">
+    <article class="">
+        <p>To begin your fitness connection search, select the profile features you'd like to results by. Keep in mind that more restrictive profile features yield fewer connections. We want you to find the right match, but we're not looking for a needle in a haystack.</p>
+    </article>
+    <form class="" action="index.html" method="post">
 
-<article class="">
-    <p>To begin your fitness connection search, select the profile features you'd like to results by. Keep in mind that more restrictive profile features yield fewer connections. We want you to find the right match, but we're not looking for a needle in a haystack.</p>
-</article>
-<form class="" action="index.html" method="post">
+        <div class="">
+            <input type="checkbox" name="" value="">
+            <label for="">Age</label>
+        </div>
 
-    <div class="">
-        <input type="checkbox" name="" value="">
-        <label for="">Age</label>
-    </div>
+        <div class="">
+            <input type="checkbox" name="" value="">
+            <label for="">Gender</label>
+        </div>
 
-    <div class="">
-        <input type="checkbox" name="" value="">
-        <label for="">Gender</label>
-    </div>
+        <div class="">
+            <input type="checkbox" name="" value="">
+            <label for="">Location</label>
+        </div>
 
-    <div class="">
-        <input type="checkbox" name="" value="">
-        <label for="">Location</label>
-    </div>
+        <div class="">
+            <input type="checkbox" name="" value="">
+            <label for="">Workout Schedule</label>
+        </div>
 
-    <div class="">
-        <input type="checkbox" name="" value="">
-        <label for="">Workout Schedule</label>
-    </div>
+        <div class="">
+            <input type="checkbox" name="" value="">
+            <label for="">Gyms</label>
+        </div>
 
-    <div class="">
-        <input type="checkbox" name="" value="">
-        <label for="">Gyms</label>
-    </div>
-
-    <div class="">
-        <input type="checkbox" name="" value="">
-        <label for="">Activities</label>
-    </div>
+        <div class="">
+            <input type="checkbox" name="" value="">
+            <label for="">Activities</label>
+        </div>
 
 
-    <input type="submit" name="submitbutton" value="Search">
+        <input type="submit" name="submitbutton" value="Search">
 
-</form>
+    </form>
+</div>
 
 {% endblock %}

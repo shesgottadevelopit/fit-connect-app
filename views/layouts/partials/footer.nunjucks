@@ -1,3 +1,5 @@
 <footer class="app-footer">
-Page Footer
+    <div class="container">
+        <span>© 2017 Fit App, LLC</span>
+    </div>
 </footer>

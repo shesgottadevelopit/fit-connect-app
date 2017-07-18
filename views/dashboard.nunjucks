@@ -3,17 +3,18 @@
 
 {% block content %}
 
-<h3>{{account.username}}</h3>
-<div class="">
-    {{account}}
-</div>
-<div class="dashboard-content">
+<div class="dashboard-content container">
+    <h2>Dashboard for: {{account.username}}</h2>
     <article class="">
-        blah blah blah
+        <div class="profile-image">
+            <img src="" alt="" width="200px" height="200px">
+
+        </div>
         <br>
     </article>
     <section>
         <a href="/dashboard/profile/{{account.username}}">View Your Public Profile</a>
+        <br>
         <a href="/dashboard/profile/edit/{{account.username}}">Edit Your Profile</a>
     </section>
 
@@ -22,7 +23,57 @@
         <div class="">
             {% if account.profile.fitconnections[0] %}
                 {% for connection in account.profile.fitconnections %}
-                    <li>{{this.username}}</li>
+                <div class="">
+                    <h3>{{connection.username}}</h3>
+                    <div class="profile-image">
+                        <img src="" alt="" width="200px" height="200px">
+
+                    </div>
+
+                    <dl class="">
+                        <dt><h4>Age</h4></dt>
+                        <dd>{{connection.age}}</dd>
+                    </dl>
+
+                    <dl class="">
+                        <dt>Gender</dt>
+                        <dd>{{connection.gender}}</dd>
+                    </dl>
+
+                    <div class="">
+                        <h4>Workout Schedule</h4>
+                        {% if connection.workoutschedule %}
+                        {% for this in connection.workoutschedule %}
+                            <li>{{this}}</li>
+                        {% endfor %}
+                        {% else %}
+                            <p>No workout preferences listed</p>
+                        {% endif %}
+                    </div>
+
+                    <div class="">
+                        <h4>Fitness Goals</h4>
+                        {% if connecction.goals %}
+                        {% for this in connection.goals %}
+                            <li>{{this}}</li>
+                        {% endfor %}
+                        {% else %}
+                            <p>No goals listed</p>
+                        {% endif %}
+                    </div>
+
+                    <div class="">
+                        <h4>Preferred Activities</h4>
+                        {% if connection.activities %}
+                        {% for this in connection.activities %}
+                            <li>{{this}}</li>
+                        {% endfor %}
+                        {% else %}
+                            <p>No preferred activities listed</p>
+                        {% endif %}
+                    </div>
+
+                </div>
                 {% endfor %}
             {% else %}
                 <p>You currently do not have any fitness connections, please complete your <a href="/dashboard/profile/{{account.username}}">profile</a> and begin searching for connections.</p>

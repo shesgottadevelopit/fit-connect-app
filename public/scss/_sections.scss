@@ -13,6 +13,8 @@
     max-width: 85%;
     margin-left: auto;
     margin-right: auto;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
 }
 .app-header {
     background-color: $darkgrey;
@@ -30,6 +32,32 @@
     li {
         display: inline-block;
     }
+
+    h1 {
+        a {
+            color: $offblack;
+            text-decoration: none;
+
+            &:visited {
+        	    color: $offblack;
+        	}
+
+        	&:hover,
+        	&:focus,
+        	&:active {
+        		color: $darkblue;
+        	}
+
+        	&:focus {
+        		outline: thin dotted;
+        	}
+
+        	&:hover,
+        	&:active {
+        		outline: 0;
+        	}
+        }
+    }
 }
 
 .app-header-logo {
@@ -40,21 +68,20 @@
 }
 
 .main-nav {
+    //text-align: right;
     color: $white;
+    font-weight: 600;
     //float: right;
-
-    ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-    }
-
     li {
-        display: inline-block;
+        padding-right: .5rem;
+
     }
 
     a {
     	color: $white;
+        text-decoration: none;
+        font-family:$primary-font;
+        text-transform: uppercase;
 
     	&:visited {
     	    color: $white;
@@ -80,6 +107,42 @@
 
 .dashboard-nav {
     //float: right;
+    //background-color
+    text-align: right;
+    color: $white;
+    font-weight: 600;
+
+    color: $white;
+    //float: right;
+
+    li {
+        padding-left: .75rem;
+    }
+
+    a {
+    	color: $white;
+        text-decoration: none;
+
+    	&:visited {
+    	    color: $white;
+    	}
+
+    	&:hover,
+    	&:focus,
+    	&:active {
+    		color: $yellow;
+    	}
+
+    	&:focus {
+    		outline: thin dotted;
+    	}
+
+    	&:hover,
+    	&:active {
+    		outline: 0;
+    	}
+    }
+
 }
 
 .app-footer {
@@ -93,4 +156,11 @@
 .main-content {
     flex: 1;
 
+}
+
+
+.profile-image {
+    width: 200px;
+    height: 200px;
+    border: 1px solid $darkgrey;
 }

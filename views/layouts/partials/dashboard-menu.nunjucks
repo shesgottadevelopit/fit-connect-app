@@ -1,8 +1,10 @@
 {%- if account -%}
 <div class="dashboard-nav">
+    <div class="">
+        <span style="font-size: 18px">Currently logged in as: {{account.username}}</span>
+    </div>
     <nav>
         <ul>
-            <li>Currently logged in as: {{account.username}}</li>
             <li><a href="/dashboard/{{account.username}}">Dashboard</a></li>
             <li><a href="/dashboard/search/{{account.username}}/">Search for Fitness Connections</a></li>
             <li><a href="/logout">Logout</a></li>

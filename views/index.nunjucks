@@ -2,7 +2,12 @@
 {% set title = 'Home Page' %}
 
 {% block content %}
-<div class="">
-    INDEX PAGE 
+<div class="container">
+
+    <h2>What is Fit Connect?</h2>
+    <p>Fit Connect is an application that helps all individuals connect with others based on their similar fitness goals. This will help anyone who wants an accountability partner or someone who gets more motivated (and accountable) when working with others than just alone.</p>
+
+    <p>Sign up <a href="/signup">here!</a></p>
+
 </div>
 {% endblock %}

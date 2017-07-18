@@ -2,18 +2,73 @@
 {% set title = "Your Profile Page" %}
 
 {% block content %}
-<div class="profile-page">
-    {{account}}
+<div class="profile-page container">
 
-    <br>
-    <br>
-    {{account.profile}}
+    <article class="">
+        <h2>Public Profile Page for: {{account.username}}</h2>
 
+        <div class="profile-image">
+            <img src="" alt="" width="200px" height="200px">
+
+        </div>
+
+        <dl class="">
+            <dt><h4>Age</h4></dt>
+            {% if account.profile.gender %}
+                <dd>{{account.profile.age}}</dd>
+            {% else %}
+                <dd>No age provided</dd>
+            {% endif %}
+        </dl>
+
+        <dl class="">
+            <dt>Gender</dt>
+            {% if account.profile.gender %}
+                <dd>{{account.profile.gender}}</dd>
+            {% else %}
+                <dd>No gender provided</dd>
+            {% endif %}
+        </dl>
+
+        <div class="">
+            <h4>Workout Schedule</h4>
+            {% if account.profile.workoutschedule[0] %}
+            {% for this in account.profile.workoutschedule %}
+                <li>{{this}}</li>
+            {% endfor %}
+            {% else %}
+                <p>No workout preferences listed</p>
+            {% endif %}
+        </div>
+
+        <div class="">
+            <h4>Fitness Goals</h4>
+            {% if account.profile.goals[0] %}
+            {% for this in account.profile.goals %}
+                <li>{{this}}</li>
+            {% endfor %}
+            {% else %}
+                <p>No goals listed</p>
+            {% endif %}
+        </div>
+
+        <div class="">
+            <h4>Preferred Activities</h4>
+            {% if account.profile.activities[0] %}
+            {% for this in account.profile.activities %}
+                <li>{{this}}</li>
+            {% endfor %}
+            {% else %}
+                <p>No preferred activities listed</p>
+            {% endif %}
+        </div>
+
+
+    </article>
     <br>
-    <br>
-    {{account.profile.username}}
-    {{account.profile.age}}
-    {{account.profile.workoutschedule}}
-    {{account.location}}
+    <div class="">
+        <a href="/dashboard/profile/edit/{{account.username}}">Edit Your Profile</a>
+    </div>
+
 </div>
 {% endblock %}
