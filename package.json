@@ -4,7 +4,8 @@
   "description": "Project Description The original concept was limited to women, but **Fit Connect** is an application that helps **all** individuals connect with others based on their similar fitness goals. This will help anyone who wants an accountability partner or someone who gets more motivated (and accountable) when working with others than just alone.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
@@ -30,5 +31,8 @@
     "request": "^2.81.0",
     "request-promise": "^4.2.1",
     "request-promise-native": "^1.0.4"
+    },
+  "engines": {
+  "node": "6.11.0"
   }
 }

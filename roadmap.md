@@ -23,12 +23,28 @@ Things to do:
 - [ ] ...
 - [ ] ...
 - [ ] configure application queries
-- [ ] ...
-- [ ] create graphics
-- [ ] add styling
+- [ ] add styling and/or graphics
 - [ ] deploy to heroku
-    - [ ] setup Procfile
-- [ ]
+    - [x] setup Procfile
+    - [ ] run `heroku create`
+    - [ ] run `git remote -v` to see if the remote was properly added
+    - [ ] run `git push heroku master` to deploy
+
+Other deployment notes:
+```javascript
+heroku logs --tail
+
+let port = process.env.PORT || 3000
+
+app.listen( port, () => {
+
+  console.log( 'listening on 3000' )
+
+})
+
+
+app.listen(process.env.PORT)
+```
 
 ---
 **Views & Routes**
@@ -43,7 +59,7 @@ Can also replace `{id}` with `{username}`
     - [x] /{username}
     - [ ] /profile
             - [x] /profile/edit
-            - [ ] /profile/save
+            - [x] /profile/save
         - [ ] /connections
             - [ ] /view/:username
             - [ ] /add/:username
@@ -52,6 +68,7 @@ Can also replace `{id}` with `{username}`
     - [ ] /profile
         - [ ] {id}
 - [ ] /search
+    - [ ] /search - form
     - [ ] /results
     - [ ] /add - for adding connetions
     - [ ] /save - for saving connections
