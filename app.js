@@ -60,11 +60,16 @@ app.use('/', indexRouter)
 const dashboardRouter = require('./routes/dashboard')
 app.use('/dashboard', dashboardRouter)
 
-// any request of a page that does not have a route will be redirected home
-// app.get('*', function( req, res ){
-//     res.redirect('/')
-// })
+const usersRouter = require('./routes/users')
+app.use('/users', usersRouter)
 
-app.listen(7000, function () {
+// any request of a page that does not have a route will be redirected home
+app.get('*', function( req, res ){
+    res.redirect('/')
+})
+
+let port = process.env.PORT || 7000
+
+app.listen(port, function () {
     console.log('listening on port 7000')
 })

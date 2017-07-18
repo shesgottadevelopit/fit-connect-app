@@ -23,55 +23,14 @@
         <div class="">
             {% if account.profile.fitconnections[0] %}
                 {% for connection in account.profile.fitconnections %}
+
                 <div class="">
-                    <h3>{{connection.username}}</h3>
-                    <div class="profile-image">
-                        <img src="" alt="" width="200px" height="200px">
-
-                    </div>
-
-                    <dl class="">
-                        <dt><h4>Age</h4></dt>
-                        <dd>{{connection.age}}</dd>
-                    </dl>
-
-                    <dl class="">
-                        <dt>Gender</dt>
-                        <dd>{{connection.gender}}</dd>
-                    </dl>
-
-                    <div class="">
-                        <h4>Workout Schedule</h4>
-                        {% if connection.workoutschedule %}
-                        {% for this in connection.workoutschedule %}
-                            <li>{{this}}</li>
-                        {% endfor %}
-                        {% else %}
-                            <p>No workout preferences listed</p>
-                        {% endif %}
-                    </div>
-
-                    <div class="">
-                        <h4>Fitness Goals</h4>
-                        {% if connecction.goals %}
-                        {% for this in connection.goals %}
-                            <li>{{this}}</li>
-                        {% endfor %}
-                        {% else %}
-                            <p>No goals listed</p>
-                        {% endif %}
-                    </div>
-
-                    <div class="">
-                        <h4>Preferred Activities</h4>
-                        {% if connection.activities %}
-                        {% for this in connection.activities %}
-                            <li>{{this}}</li>
-                        {% endfor %}
-                        {% else %}
-                            <p>No preferred activities listed</p>
-                        {% endif %}
-                    </div>
+                    <dl>
+                        <dt>username: {{connection.username}}</dt>
+                        <dd>Email: {{connection.email}}</dd>
+                        <dd>Workout Schedule:{{connection.workoutschedule}}</dd>
+                    </ul>
+                </div>
 
                 </div>
                 {% endfor %}
@@ -81,7 +40,7 @@
         </div>
     </section>
 
-    <section>
+    <section class="container">
         <a href="#">Link your other accounts</a>
         <div class="">This will require API integration
 

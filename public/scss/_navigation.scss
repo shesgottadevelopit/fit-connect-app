@@ -1,16 +1,18 @@
 
 // links
 a {
-	color: royalblue;
+	color: $coral;
+	background-color: #dfe8de;
+	font-weight: 600;
 
 	&:visited {
-	color: purple;
+	color: $coral;
 	}
 
 	&:hover,
 	&:focus,
 	&:active {
-		color: midnightblue;
+		color: $blue;
 	}
 
 	&:focus {

@@ -14,7 +14,11 @@ const fitconnectionsSchema = new Schema ({
         required: true
     },
     profileimage: String,
-    location: Array,
+    location: {
+        city: String,
+        state: String,
+        zip: Number
+    },
     age: Number,
     gender: String,
     workoutschedule: Array,
@@ -72,8 +76,13 @@ const accountSchema = new Schema({
         datejoined: Date,
         firstname: String,
         lastname: String,
+        bio: String,
         profileimage: String,
-        location: Array,
+        location: {
+            city: String,
+            state: String,
+            zip: Number
+        },
         age: {
             type: Number,
             min: 18,

@@ -1,0 +1,82 @@
+<form class="profile-edit-form" action="/dashboard/search" method="post">
+
+    <div class="profile-form-group">
+        <label for="age"><h4>Age</h4></label>
+        <input type="number" name="age" value="" placeholder="18+" min="18" max="100">
+    </div>
+
+    <div class="profile-form-group">
+        <label for="age"><h4>Gender</h4></label>
+        <select class="" name="gender" size="2">
+            <option value="Female">Female</option>
+            <option value="Male">Male</option>
+
+        </select>
+    </div>
+
+    <div class="profile-form-group">
+        <label for="location"><h4>Location*</h4></label>
+        <input type="text" name="zip" pattern="[0-9]{5}" {% if account.profile.location.zip %}value="{{account.profile.location.zip}}"{% else%}value=""{% endif %} placeholder="Five digit zip code" required>
+        <input type="text" name="city" {% if account.profile.location.city %}value="{{account.profile.location.city}}"{% else%}value=""{% endif %} placeholder="City" required>
+        <input type="text" name="state" {% if account.profile.location.state %}value="{{account.profile.location.state}}"{% else%}value=""{% endif %} placeholder="State" required>
+
+    </div>
+
+    <div class="profile-form-group">
+        <fieldset>
+            <h4>Workout Schedule Preferences</h4>
+            {% if account.profile.workoutschedule %}
+            {% for this in account.profile.workoutschedule %}
+            <div>
+                <input type="checkbox" name="workoutschedule" value="{{this}}">
+                <label for="workoutpreference">{{this}}</label>
+            </div>
+            {% endfor %}
+            {% else %}
+                <p>You have not included your workout schedule preferences. Please complete your profile <a href="/dashboard/profile/edit/{{account.username}}">here</a></p>
+            {% endif %}
+
+
+        </fieldset>
+
+    </div>
+
+    <div class="profile-form-group">
+        <label for=""><h4>Gyms</h4></label>
+        <input type="text" name="" value="">
+    </div>
+
+    <div class="profile-form-group">
+        <label for=""><h4>Preferred Fitness Activities</h4></label>
+        {% if account.profile.activities[0] %}
+        <article>Select/De-select multiple by holding down <code>ctrl</code></article>
+        <select class="" name="activities" multiple>
+            {% for this in account.profile.activities %}
+                <option name="activity" value="{{this}}">{{this}}</option>
+            {% endfor %}
+        </select>
+        {% else %}
+            <p>You have not included your preferred activities. Please complete your profile <a href="/dashboard/profile/edit/{{account.username}}">here</a></p>
+        {% endif %}
+
+    </div>
+
+    <div class="profile-form-group">
+        <label for=""><h4>Fitness Goals</h4></label>
+        {% if account.profile.goals[0] %}
+        <article>Select/De-select multiple by holding down <code>ctrl</code></article>
+        <select class="" name="goals" multiple>
+            {% for this in account.profile.goals %}
+                <option name="goal" value="{{this}}">{{this}}</option>
+            {% endfor %}
+        </select>
+        {% else %}
+            <p>You have not included your fitness goals. Please complete your profile <a href="/dashboard/profile/edit/{{account.username}}">here</a></p>
+        {% endif %}
+
+    </div>
+
+    <div class="profile-form-group">
+        <input type="submit" name="searchprofilesbutton" value="Find Fitness Connections">
+    </div>
+</form>

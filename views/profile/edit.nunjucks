@@ -37,6 +37,11 @@
         </div>
 
         <div class="profile-form-group">
+            <label for="bio"><h4>Bio/About You</h4></label>
+            <textarea name="bio" rows="8" cols="80"></textarea>
+        </div>
+
+        <div class="profile-form-group">
             <label for="age"><h4>Age</h4></label>
             <input type="number" name="age" {% if account.profile.age %}value="{{account.profile.age}}"{% else%}value=""{% endif %} placeholder="18+" min="18" max="100" required>
         </div>
@@ -52,9 +57,9 @@
 
         <div class="profile-form-group">
             <label for="location"><h4>Location*</h4></label>
-            <input type="text" pattern="[0-9]{5}" value="Five digit zip code" required>
-            <input type="text" name="city" {% if account.profile.city %}value="{{account.profile.city}}"{% else%}value=""{% endif %} placeholder="City" required>
-            <input type="text" name="state" {% if account.profile.state %}value="{{account.profile.state}}"{% else%}value=""{% endif %} placeholder="State" required>
+            <input type="text" name="zip" pattern="[0-9]{5}" {% if account.profile.location.zip %}value="{{account.profile.location.zip}}"{% else%}value=""{% endif %} placeholder="Five digit zip code" required>
+            <input type="text" name="city" {% if account.profile.location.city %}value="{{account.profile.location.city}}"{% else%}value=""{% endif %} placeholder="City" required>
+            <input type="text" name="state" {% if account.profile.location.state %}value="{{account.profile.location.state}}"{% else%}value=""{% endif %} placeholder="State" required>
 
         </div>
 
@@ -79,6 +84,7 @@
 
         <div class="profile-form-group">
             <label for=""><h4>Preferred Fitness Activities</h4></label>
+            <article>Select multiple by holding down <code>ctrl</code></article>
             <select class="" name="activities" multiple>
                 {% for this in datajson.activities %}
                     <option name="activity" value="{{this.name}}" {% for item in account.profile.activities %}{% if item === this.name %} selected {% endif %}{% endfor %}>{{this.name}}</option>
@@ -88,6 +94,7 @@
 
         <div class="profile-form-group">
             <label for=""><h4>Fitness Goals</h4></label>
+            <article>Select multiple by holding down <code>ctrl</code></article>
             <select class="" name="goals" multiple>
                 {% for this in datajson.goals %}
                     <option name="goal" value="{{this.name}}" {% for item in account.profile.goals %}{% if item === this.name %} selected {% endif %}{% endfor %}>{{this.name}}</option>

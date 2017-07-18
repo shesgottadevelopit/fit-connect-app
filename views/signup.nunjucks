@@ -2,10 +2,10 @@
 {% set title = 'Sign Up for Fit Connect!' %}
 
 {% block content %}
-<div class="signup-content">
+<div class="signup-content container">
 
     <article class="">
-        <p>[insert copy about signing up for something awesome]</p>
+        <p>Sign up here!</p>
 
     </article>
 

@@ -1,0 +1,43 @@
+{% extends "main.nunjucks" %}
+{% set title = "Search Results" %}
+
+
+{% block content %}
+<div class="container search-results">
+
+<div class="search-form-widget">
+    <details>
+        <summary class="search-form-widget-title">Search Again</summary>
+        <section>
+            {% block searchform %}
+            {% include "searchform.nunjucks" %}
+            {% endblock %}
+        </section>
+    </details>
+</div>
+<br>
+
+    <div class="search-results-section">
+        <h3>Search Results:</h3>
+        {% if results %}
+            {% for result in results %}
+            <div class="search-result-card">
+                <div class="result-image">
+
+                </div>
+                <h4>{{result.username}}</h4>
+                <span><a href="/users/profile/{{result.id}}">View their Profile</a></span>
+                <p>{{result.profile.bio}}</p>
+                <br>
+
+                {% endfor %}
+            </div>
+        {% else %}
+            <p>Your search for fitness connections returned nothing.</p>
+
+        {% endif %}
+    </div>
+
+</div>
+
+{% endblock %}

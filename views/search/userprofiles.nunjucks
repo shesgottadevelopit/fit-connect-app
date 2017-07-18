@@ -1,0 +1,102 @@
+{% extends "main.nunjucks" %}
+{% set title = 'Profile Page' %}
+
+{% block content %}
+<div class="profile-page container">
+
+    <article class="">
+        <h2>Public Profile Page for: {{userprofile.username}}</h2>
+
+        <div class="profile-image">
+            <img src="" alt="" width="200px" height="200px">
+
+        </div>
+
+        <div class="">
+            <h4>About Me</h4>
+            <p>{{userprofile.profile.bio}}</p>
+        </div>
+
+        <dl class="">
+            <dt><h4>Age</h4></dt>
+            {% if userprofile.profile.gender %}
+                <dd>{{userprofile.profile.age}}</dd>
+            {% else %}
+                <dd>No age provided</dd>
+            {% endif %}
+        </dl>
+
+        <dl class="">
+            <dt>Gender</dt>
+            {% if userprofile.profile.gender %}
+                <dd>{{userprofile.profile.gender}}</dd>
+            {% else %}
+                <dd>No gender provided</dd>
+            {% endif %}
+        </dl>
+
+        <dl class="">
+            <dt>Location</dt>
+            {% if userprofile.profile.location.zip %}
+                <dd>Zip Code: {{userprofile.profile.location.zip}}</dd>
+                <dd>City: {{userprofile.profile.location.city}}</dd>
+                <dd>State: {{userprofile.profile.location.state}}</dd>
+            {% else %}
+                <dd>No location information provided</dd>
+            {% endif %}
+        </dl>
+
+        <div class="">
+            <h4>Workout Schedule</h4>
+            {% if userprofile.profile.workoutschedule[0] %}
+            {% for this in userprofile.profile.workoutschedule %}
+                <li>{{this}}</li>
+            {% endfor %}
+            {% else %}
+                <p>No workout preferences listed</p>
+            {% endif %}
+        </div>
+
+        <div class="">
+            <h4>Fitness Goals</h4>
+            {% if userprofile.profile.goals[0] %}
+            {% for this in userprofile.profile.goals %}
+                <li>{{this}}</li>
+            {% endfor %}
+            {% else %}
+                <p>No goals listed</p>
+            {% endif %}
+        </div>
+
+        <div class="">
+            <h4>Preferred Activities</h4>
+            {% if userprofile.profile.activities[0] %}
+            {% for this in userprofile.profile.activities %}
+                <li>{{this}}</li>
+            {% endfor %}
+            {% else %}
+                <p>No preferred activities listed</p>
+            {% endif %}
+        </div>
+
+
+    </article>
+    <br>
+    <div class="">
+        <form class="" action="/dashboard/connections/add/{{account.username}}" method="post">
+        <input type="hidden" name="username" value="{{userprofile.username}}">
+        <input type="hidden" name="email" value="{{userprofile.email}}">
+        <input type="hidden" name="age" value="{{userprofile.profile.age}}">
+        <input type="hidden" name="gender" value="{{userprofile.profile.gender}}">
+        <input type="hidden" name="location" value="{{userprofile.profile.location}}">
+        <input type="hidden" name="workoutschedule" value="{{userprofile.profile.workoutschedule}}">
+        <input type="hidden" name="activities" value="{{userprofile.profile.activities}}">
+        <input type="hidden" name="goals" value="{{userprofile.profile.goals}}">
+        <input id="addFitConnectButton" class="" type="submit" name="addfitconnection" value="Add to Your Fit Connections">
+
+
+        </form>
+    </div>
+
+</div>
+{% endblock %}

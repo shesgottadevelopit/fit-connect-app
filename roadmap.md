@@ -19,11 +19,8 @@ Things to do:
     - [x] configure passport within `app.js`
         - [x] write helper function to check if session still exists
         - [x] implement ways to protect certain conteent based on credentials (`isAuthd` functionality)
-- [ ] ...
-- [ ] ...
-- [ ] ...
-- [ ] configure application queries
-- [ ] add styling and/or graphics
+- [x] configure application queries
+- [x] add basic styling and/or graphics
 - [ ] deploy to heroku
     - [x] setup Procfile
     - [ ] run `heroku create`
@@ -48,7 +45,6 @@ app.listen(process.env.PORT)
 
 ---
 **Views & Routes**
-Can also replace `{id}` with `{username}`
 
 - [ ] / **root**
     - [x] /about
@@ -60,25 +56,20 @@ Can also replace `{id}` with `{username}`
     - [ ] /profile
             - [x] /profile/edit
             - [x] /profile/save
-        - [ ] /connections
+        - [x] /connections
             - [ ] /view/:username
-            - [ ] /add/:username
+            - [x] /add/:username
             - [ ] /delete/:username
-- [ ] /users
-    - [ ] /profile
-        - [ ] {id}
-- [ ] /search
-    - [ ] /search - form
-    - [ ] /results
-    - [ ] /add - for adding connetions
-    - [ ] /save - for saving connections
+- [x] /users
+    - [x] /profile
+        - [x] {id}
+- [x] /search
+    - [x] /search - form
+    - [x] /results
+    - [x] /add - for adding connections
+    - [x] /save - for saving connections
     - [ ] /delete - for deleting connections
 
-**Zakk notes**
-- /profile
-    - /:id
-    - /edit/:id
-    - /edit
 
 
 **Query options**
@@ -89,16 +80,3 @@ Can also replace `{id}` with `{username}`
 - activities
 - fitness goals
 
-
-**Test users:**
-marybeth (booboo)
-shesgottadevelopit+test1@gmail.com
-
-janet (testing)
-shesgottadevelopit+test1@gmail.com
-
-aziza (jones)
-shesgottadevelopit+test1@gmail.com
-
-akudo (test)
-shesgottadevelopit@gmail.com

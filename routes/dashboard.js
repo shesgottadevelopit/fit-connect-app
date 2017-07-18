@@ -3,6 +3,7 @@ const dashboardRouter = express.Router()
 const Account = require('../models/Account');
 const isAuthd = require('../utils/isAuthd');
 const datajson = require('../data/data.json')
+const isEmpty = require('../utils/isEmpty')
 
 dashboardRouter.use(isAuthd)
 
@@ -52,7 +53,12 @@ dashboardRouter.post('/profile/save/:username', function (req, res) {
             lastname: req.body.lastname,
             age: req.body.age,
             gender: req.body.gender,
-            location: req.body.location,
+            bio: req.body.bio,
+            location: {
+                zip: req.body.zip,
+                city: req.body.city,
+                state: req.body.state
+            },
             gyms: req.body.gyms,
             workoutschedule: req.body.workoutschedule,
             activities: req.body.activities,
@@ -74,11 +80,85 @@ dashboardRouter.get('/search/:username', function (req, res) {
 })
 
 dashboardRouter.post('/search', function (req, res) {
+    let account = req.user;
+    console.log(req.body)
+
+    let searchQuery = {
+        '_id': { '$ne': req.user.id }
+    }
+    // let searchQuery = []
+
+    if (req.body.age && req.body.age !== "") {
+        searchQuery['profile.age'] = req.body.age
+    }
+
+    if (req.body.gender && req.body.gender !== "") {
+        searchQuery['profile.gender'] = req.body.gender
+    }
+
+    if (req.body.workoutschedule && req.body.workoutschedule !== "") {
+        searchQuery['profile.workoutschedule'] = req.body.workoutschedule
+    }
+
+    if (req.body.activities && req.body.activities !== "") {
+        searchQuery['profile.activities'] = req.body.activities
+    }
+
+    if (req.body.goals && req.body.goals !== "") {
+        searchQuery['profile.goals'] = req.body.goals
+    }
+
+    if (req.body.location && req.body.location !== "") {
+        searchQuery['profile.location'] = req.body.location
+    }
+    console.log(searchQuery)
+
+    Account.find(searchQuery, function (err, results) {
+
+        if (!results[0] || isEmpty(searchQuery)) {
+            res.render('search/results', {account})
+        } else {
+            res.render('search/results', {account, results})
+        }
+        console.log(results)
+
+    // This worked
+    // Account.find({'profile.gender': 'Female'}, function (err, results) {
+    //     //res.send('completed')
+    //     res.render('search/results', {results})
+    //     console.log(results)
+    })
+    // console.log(req)
+    // console.log(req.query)
 
 })
-dashboardRouter.get('/connections')
-dashboardRouter.get('/connections/view')
-dashboardRouter.get('/connections/add')
+
+dashboardRouter.post('/connections/add/:username', function (req, res) {
+    console.log(req.body)
+    Account.findOne({'username': req.params.username}, function(err, account) {
+        account.profile.fitconnections.push({
+            username: req.body.username,
+            email: req.body.email,
+            profileimage: req.body.profileimage,
+            location: req.body.location,
+            age: req.body.age,
+            gender: req.body.gender,
+            workoutschedule: req.body.workoutschedule,
+            gyms: req.body.gyms,
+            activities: req.body.activities,
+            goals: req.body.goals
+        })
+        account.save();
+        res.redirect(`/dashboard/${account.username}`)
+        //res.render('dash/single', {artist})
+    })
+
+})
+dashboardRouter.get('/connections/view/:username', function (req, res) {
+    Account.findOne({'username': req.params.username}, function (err, fitconnection) {
+        
+    })
+})
 dashboardRouter.get('/connections/delete')
 
 module.exports = dashboardRouter

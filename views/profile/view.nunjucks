@@ -12,6 +12,11 @@
 
         </div>
 
+        <div class="">
+            <h4>About Me</h4>
+            <p>{{account.profile.bio}}</p>
+        </div>
+
         <dl class="">
             <dt><h4>Age</h4></dt>
             {% if account.profile.gender %}
@@ -27,6 +32,17 @@
                 <dd>{{account.profile.gender}}</dd>
             {% else %}
                 <dd>No gender provided</dd>
+            {% endif %}
+        </dl>
+
+        <dl class="">
+            <dt>Location</dt>
+            {% if account.profile.location.zip %}
+                <dd>Zip Code: {{account.profile.location.zip}}</dd>
+                <dd>City: {{account.profile.location.city}}</dd>
+                <dd>State: {{account.profile.location.state}}</dd>
+            {% else %}
+                <dd>No location information provided</dd>
             {% endif %}
         </dl>
 

@@ -227,6 +227,31 @@ th {
 # layout
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
+# navigation (links/menus)
+--------------------------------------------------------------*/
+a {
+		color: #fcb913;
+		background-color: #dfe8de;
+		font-weight: 600;
+}
+
+a:visited {
+		color: #fcb913;
+}
+
+a:hover, a:focus, a:active {
+		color: #014282;
+}
+
+a:focus {
+		outline: thin dotted;
+}
+
+a:hover, a:active {
+		outline: 0;
+}
+
+/*--------------------------------------------------------------
 # general element formatting
 --------------------------------------------------------------*/
 html {
@@ -410,6 +435,10 @@ big {
 /*--------------------------------------------------------------
 # sections (content/posts/widgets)
 --------------------------------------------------------------*/
+.username {
+		color: #fcb913;
+}
+
 .page {
 		margin-left: auto;
 		margin-right: auto;
@@ -452,6 +481,7 @@ big {
 .app-header h1 a {
 		color: #09091a;
 		text-decoration: none;
+		background-color: transparent;
 }
 
 .app-header h1 a:visited {
@@ -486,6 +516,7 @@ big {
 }
 
 .main-nav a {
+		background-color: transparent;
 		color: #ffffff;
 		text-decoration: none;
 		font-family: "Hind", Arial, sans-serif;
@@ -522,6 +553,7 @@ big {
 .dashboard-nav a {
 		color: #ffffff;
 		text-decoration: none;
+		background-color: transparent;
 }
 
 .dashboard-nav a:visited {
@@ -555,6 +587,22 @@ big {
 		width: 200px;
 		height: 200px;
 		border: 1px solid #595a5c;
+}
+
+.result-image {
+		width: 100px;
+		height: 100px;
+		border: 1px solid #595a5c;
+}
+
+.search-form-widget-title {
+		font-family: "Hind", Arial, sans-serif;
+		font-size: 24px;
+		font-weight: 700;
+}
+
+details {
+		outline: 0;
 }
 
 /*--------------------------------------------------------------
@@ -645,29 +693,6 @@ textarea:focus {
 
 textarea {
 		width: 100%;
-}
-
-/*--------------------------------------------------------------
-# navigation (links/menus)
---------------------------------------------------------------*/
-a {
-		color: royalblue;
-}
-
-a:visited {
-		color: purple;
-}
-
-a:hover, a:focus, a:active {
-		color: midnightblue;
-}
-
-a:focus {
-		outline: thin dotted;
-}
-
-a:hover, a:active {
-		outline: 0;
 }
 
 /*# sourceMappingURL=style.css.map */

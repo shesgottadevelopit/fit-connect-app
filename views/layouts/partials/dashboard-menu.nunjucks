@@ -1,7 +1,7 @@
 {%- if account -%}
 <div class="dashboard-nav">
     <div class="">
-        <span style="font-size: 18px">Currently logged in as: {{account.username}}</span>
+        <span style="font-size: 18px">Currently logged in as: <span class="username">{{account.username}}</span></span>
     </div>
     <nav>
         <ul>
